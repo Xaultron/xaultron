@@ -1,0 +1,194 @@
+/*Menu Btn*/
+.menu-btn {
+  position: absolute;
+  z-index: 2;
+  right: 2%; /*35px*/
+  top: 35px;
+  cursor: pointer;
+  transition: 0.5s ease-out;
+}
+
+/*Individual Button Lines*/
+.btn-line {
+  width: 30px;
+  height: 4px;
+  margin: 0 0 5px 0; /*Top(0), Right(0) Bottom(5px) Left(0) */
+  background-color: black;
+  transition: 0.5s ease-out;
+}
+
+
+/*Menu Overlay*/
+.menu {
+  top: 0;
+  left: 0; /*Added to fix mobile navbar bug - come back here if any issues pop up again*/
+  position:absolute;
+  width: 100%;
+  visibility: hidden;
+}
+
+.show {
+  visibility: visible;
+}
+
+.menu-branding,
+.menu-nav {
+  display: flex;
+  flex-flow: column wrap; /*creates a stacked/vertical navbar*/
+  align-items: center;
+  justify-content: center;
+  float: left;
+  width: 50%;
+  height: 100vh;
+  overflow: hidden; /*hides scrollbars*/
+}
+
+.menu-nav {
+  margin: 0;
+  padding: 0;
+  padding: padding;
+  background: #262626;
+  list-style: none;
+  transform: translate3d(0, -100%, 0); /*slide in fro the top*/
+  transition: 0.5s ease-out;
+}
+/*Branding Side*/
+.menu-branding {
+  background: #262626;
+  transform: translate3d(0, 100%, 0); /*slide in from the bottom*/
+  transition: 0.5s ease-out;
+}
+
+.show {
+  transform: translate3d(0, 0, 0);
+}
+
+/*Image - Logo*/
+.portrait {
+  width: 250px;
+  height: 250px;
+  background: url("../images/logo.svg");
+  border-radius: 50%;
+  border: solid 8px rgb(107, 103, 84);
+  background-size: cover;
+}
+
+.nav-item {
+  transform: translate3d(600px, 0, 0);
+  transition: 0.5s ease-out;
+}
+.nav-item:nth-child() {
+  transform: translate3d(600px, 0, 0);
+  transition: 0.5s ease-out;
+}
+.show {
+  /*slide in from the far right hand side*/
+  transform: translate3d(0, 0, 0);
+}
+
+/*Navigation Bar*/
+nav ul li a {
+  /* font-family: 'Righteous', cursive; */
+  font-family: 'Orbitron', sans-serif;
+  color: #ffff; /*white*/
+  /* font-weight: bold; */
+  text-decoration: none;
+  outline: none;
+}
+
+:link:focus, :visited:focus { 
+  outline: none; 
+}
+
+/*Navigation button - Navigation*/
+/*.active > a {
+  color: rgb(107, 103, 84);
+}*/
+
+.nav-link {
+  display: inline block;
+  position: relative;
+  font-size: 30px;
+  text-transform: uppercase;
+  padding: 1rem 0;
+  font-weight: 300;
+  color: none;
+  transition: 0.5s ease-out;
+}
+
+.nav-link:hover {
+  /* border: solid 8px rgb(107, 103, 84); */
+}
+
+/****************************************************************/
+/* Navigation Bar Media Queries*/
+/****************************************************************/
+
+/*Small Screen Sizes - Mobile*/
+@media screen and (max-width: 500px) {
+  main > h1 {
+    margin-top: 10vh;
+  }
+  .nav-link {
+   font-size:20px;
+  }
+}
+
+@media screen and (max-width: 360px){
+  .nav-link{
+    font-size: 15px;
+  }
+}
+
+/*Medium Screen Sizes - Tablets & Small Laptops*/
+@media screen and (max-width: 768px) {
+  main {
+    align-items: centre;
+    text-align: centre;
+  }
+
+  .lg-heading {
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  .menu-branding,
+  .menu-nav {
+    float: none;
+    width: 100%;
+    min-height: 0;
+    overflow: hidden; /*hides scrollbars*/
+  }
+
+  .menu-nav {
+    height: 75vh;
+    transform: translate3d(0, 100%, 0); /*slide in from the top*/
+    font-size: 24px;
+  }
+  /*Branding Side*/
+  .menu-branding {
+    height: 25vh;
+    transform: translate3d(0, -100%, 0); /*slide in from the right*/
+  }
+  .show {
+    transform: translate3d(0, 0, 0);
+  }
+
+  /*Image - Logo*/
+  .portrait {
+    width: 110px;
+    height: 110px;
+    background: url("../Images/logo.svg");
+    border-radius: 50%;
+    border: solid 3px #747410;
+    background-size: cover;
+  }
+}
+
+/*Large Screen Sizes - Laptops*/
+@media all and (min-width: 769px) and (max-width: 1170px) {
+}
+
+/*Extra-Large Screen Sizes - TV Monitor*/
+@media screen and (min-width: 1170px) {
+}
